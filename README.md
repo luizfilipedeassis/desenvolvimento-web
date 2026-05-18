@@ -10,12 +10,15 @@ Repositório criado para armazenar as atividades da disciplina de Desenvolviment
 * atividade4: Refatoração do blog com layout responsivo utilizando CSS Grid e Flexbox
 * atividade5: Script em JavaScript para cálculo de gorjeta utilizando variáveis e operadores
 * atividade6: Aplicação To-Do List utilizando HTML, CSS e JavaScript
+* atividade7: Refatoração do blog utilizando React, componentes e props
 
 ## 🛠️ Tecnologias utilizadas
 
 * HTML5
 * CSS3
 * JavaScript
+* React
+* Vite
 
 ## 👨‍💻 Autor
 
