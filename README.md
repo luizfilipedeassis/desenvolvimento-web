@@ -11,6 +11,7 @@ Repositório criado para armazenar as atividades da disciplina de Desenvolviment
 * atividade5: Script em JavaScript para cálculo de gorjeta utilizando variáveis e operadores
 * atividade6: Aplicação To-Do List utilizando HTML, CSS e JavaScript
 * atividade7: Refatoração do blog utilizando React, componentes e props
+* atividade8: To-Do List utilizando React e useState
 
 ## 🛠️ Tecnologias utilizadas
 
