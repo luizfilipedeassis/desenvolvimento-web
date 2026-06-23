@@ -1,0 +1,384 @@
+.hero-section {
+  background: linear-gradient(180deg, var(--secondary-color) 0%, #eef9ff 70%, #fff 100%);
+  padding-block: 2rem 4rem;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-content {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 620px;
+}
+
+.section-kicker {
+  color: var(--primary-color);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+.hero-content p,
+.section-heading p,
+.feature-card p,
+.price-card p,
+.contact-section p,
+.site-footer p {
+  color: var(--second-text-color);
+}
+
+.hero-actions {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.btn-link-primary,
+.btn-link-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  border-radius: 0.4rem;
+  padding: 0.825rem 1.5rem;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  border: 0.15rem solid var(--primary-color);
+}
+
+.btn-link-primary {
+  color: var(--light-text-color);
+  background: var(--primary-color);
+}
+
+.btn-link-primary:hover {
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.btn-link-secondary {
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.btn-link-secondary:hover {
+  color: var(--light-text-color);
+  background: var(--primary-color);
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 320px;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 24px 80px rgba(35, 166, 240, 0.18);
+  overflow: hidden;
+}
+
+.activewear-shape {
+  position: absolute;
+  right: 12%;
+  bottom: 2rem;
+  width: 10rem;
+  height: 14rem;
+  border-radius: 4rem 4rem 1rem 1rem;
+  background: linear-gradient(145deg, #111827, #23a6f0);
+}
+
+.activewear-shape::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 2.7rem;
+  width: 4.6rem;
+  height: 3.5rem;
+  border-radius: 0 0 2.4rem 2.4rem;
+  background: #fff;
+}
+
+.activewear-shape::after {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  top: 4rem;
+  width: 13rem;
+  height: 1.4rem;
+  border-radius: 999px;
+  background: #23a6f0;
+  transform: rotate(-18deg);
+}
+
+.product-card {
+  position: absolute;
+  display: grid;
+  gap: 0.25rem;
+  width: min(72%, 260px);
+  border-radius: 0.5rem;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 16px 40px rgba(37, 43, 66, 0.12);
+  z-index: 1;
+}
+
+.product-card small {
+  color: var(--second-text-color);
+}
+
+.main-product {
+  left: 1.5rem;
+  top: 2rem;
+}
+
+.floating-card {
+  right: 1.25rem;
+  bottom: 2rem;
+  width: 9rem;
+}
+
+.product-icon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  color: var(--light-text-color);
+  background: var(--primary-color);
+  font-weight: var(--fw-bold);
+}
+
+.section-heading {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 640px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.features-grid,
+.testimonials-grid,
+.pricing-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.feature-card,
+.testimonial-card,
+.price-card,
+.contact-form {
+  border: 1px solid #e7edf3;
+  border-radius: 0.5rem;
+  background: #fff;
+  padding: 1.5rem;
+}
+
+.feature-card {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.feature-card span {
+  color: var(--primary-color);
+  font-weight: var(--fw-bold);
+}
+
+.testimonials-section,
+.contact-section {
+  background: var(--light-gray);
+}
+
+.testimonial-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.testimonial-card p {
+  color: var(--text-color);
+}
+
+.testimonial-card span {
+  color: var(--second-text-color);
+  font-size: var(--fs-sm);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  color: var(--light-text-color);
+  background: var(--primary-color);
+  font-weight: var(--fw-bold);
+}
+
+.pricing-grid {
+  align-items: stretch;
+}
+
+.price-card {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+}
+
+.price-card strong {
+  color: var(--primary-color);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+}
+
+.price-card ul {
+  display: grid;
+  gap: 0.5rem;
+  color: var(--second-text-color);
+}
+
+.price-card li::before {
+  content: "+";
+  color: var(--primary-color);
+  font-weight: var(--fw-bold);
+  margin-right: 0.5rem;
+}
+
+.featured-price {
+  border-color: var(--primary-color);
+  box-shadow: 0 24px 70px rgba(35, 166, 240, 0.16);
+}
+
+.badge {
+  width: fit-content;
+  border-radius: 999px;
+  background: var(--secondary-color);
+  color: var(--text-color);
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  padding: 0.25rem 0.75rem;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.contact-grid > div:first-child {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+}
+
+.contact-info {
+  display: grid;
+  gap: 0.25rem;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 1rem;
+}
+
+.contact-info span {
+  color: var(--second-text-color);
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-form label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #d9e3ec;
+  border-radius: 0.4rem;
+  padding: 0.9rem 1rem;
+  color: var(--text-color);
+  background: #fff;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+.form-feedback {
+  border-radius: 0.4rem;
+  padding: 0.75rem;
+  font-size: var(--fs-sm);
+}
+
+.form-feedback.success {
+  color: #0f7a3a;
+  background: #eaf8ef;
+}
+
+.form-feedback.error {
+  color: #9b1c1c;
+  background: #fdecec;
+}
+
+.site-footer {
+  background: var(--text-color);
+  color: var(--light-text-color);
+  padding-block: 2rem;
+}
+
+.footer-content {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.site-footer p,
+.site-footer a {
+  color: #d7dee8;
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (width >= 768px) {
+  .hero-actions {
+    display: flex;
+  }
+
+  .features-grid,
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .testimonials-grid,
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 1280px) {
+  .hero-section {
+    padding-block: 4rem 6rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr 0.85fr;
+  }
+
+  .hero-visual {
+    min-height: 420px;
+  }
+
+  .footer-content {
+    grid-template-columns: auto 1fr auto;
+  }
+}

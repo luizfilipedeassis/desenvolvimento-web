@@ -1,0 +1,100 @@
+#hero {
+  background: var(--light-gray);
+  border-top: 0.125rem solid #e4e4e4;
+  min-height: 34rem;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+#hero > img {
+  position: absolute;
+  right: -8%;
+  top: 0;
+  width: 62%;
+  height: 46%;
+  padding-left: 0;
+  object-fit: cover;
+  border-bottom-left-radius: 2rem;
+}
+
+#hero p {
+  color: var(--second-text-color);
+}
+
+#hero .content {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.75rem;
+  min-height: 34rem;
+  padding-top: 3rem;
+}
+
+#hero .content h1 {
+  max-width: 38rem;
+}
+
+#hero .content > p {
+  max-width: 30rem;
+}
+
+#hero .content > div {
+  width: fit-content;
+  align-self: center;
+  margin-bottom: 0;
+}
+
+@media (width >= 1280px) {
+  #hero {
+    background: var(--bg-color);
+    border-top: none;
+    min-height: 39rem;
+  }
+
+  #hero > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #hero > span img {
+    width: 6.25rem;
+    height: 6.25rem;
+    object-fit: cover;
+    border-bottom-right-radius: 2rem;
+  }
+
+  #hero > img {
+    top: 0;
+    right: -6rem;
+    width: 46%;
+    height: 52%;
+    padding-left: 0;
+    border-bottom-left-radius: 2rem;
+  }
+
+  #hero .content {
+    gap: 2.5rem;
+    min-height: 39rem;
+    padding-top: 0;
+    padding-left: 0;
+  }
+
+  #hero .content p {
+    width: 28rem;
+    align-self: center;
+  }
+
+  #hero .content > div :first-child {
+    width: 10.625rem;
+  }
+
+  #hero .content p:first-of-type {
+    color: var(--primary-color);
+    font-weight: var(--fw-bold);
+  }
+}

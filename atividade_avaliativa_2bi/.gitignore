@@ -1,0 +1,8 @@
+node_modules
+dist
+.netlify
+netlify/functions/*.zip
+netlify/functions/manifest.json
+.env
+.env.local
+*.local
