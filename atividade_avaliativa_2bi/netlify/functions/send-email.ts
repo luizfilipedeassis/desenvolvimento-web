@@ -2,9 +2,7 @@ import type { Handler, HandlerEvent } from '@netlify/functions'
 import nodemailer from 'nodemailer'
 
 interface ContactPayload {
-  name?: string
   email: string
-  phone?: string
   message: string
 }
 
@@ -14,6 +12,7 @@ const corsHeaders = (origin: string) => ({
   'Access-Control-Allow-Origin': ALLOWED_ORIGIN || origin,
   'Access-Control-Allow-Headers': 'Content-Type',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Content-Type': 'application/json',
 })
 
 const handler: Handler = async (event: HandlerEvent) => {
@@ -47,20 +46,19 @@ const handler: Handler = async (event: HandlerEvent) => {
     }
   }
 
-  const name = payload.name?.trim() || 'Cliente FitWear'
   const email = payload.email?.trim()
-  const phone = payload.phone?.trim()
   const message = payload.message?.trim()
 
   if (!email || !message) {
     return {
       statusCode: 422,
       headers: corsHeaders(origin),
-      body: JSON.stringify({ error: 'Campos obrigatórios: email, message.' }),
+      body: JSON.stringify({ error: 'Informe o e-mail e o motivo do contato.' }),
     }
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
   if (!emailRegex.test(email)) {
     return {
       statusCode: 422,
@@ -86,19 +84,15 @@ const handler: Handler = async (event: HandlerEvent) => {
       to: process.env.CONTACT_EMAIL,
       subject: '[FitWear] Nova mensagem Landing Page',
       text: [
-        `Nome: ${name}`,
         `E-mail: ${email}`,
-        `Telefone: ${phone || 'Não informado'}`,
         '',
-        'Mensagem:',
+        'Motivo do contato:',
         message,
       ].join('\n'),
       html: `
         <h2>Nova mensagem de contato</h2>
-        <p><strong>Nome:</strong> ${escapeHtml(name)}</p>
         <p><strong>E-mail:</strong> ${escapeHtml(email)}</p>
-        <p><strong>Telefone:</strong> ${escapeHtml(phone || 'Não informado')}</p>
-        <p><strong>Mensagem:</strong></p>
+        <p><strong>Motivo do contato:</strong></p>
         <p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
       `,
     })
@@ -110,10 +104,13 @@ const handler: Handler = async (event: HandlerEvent) => {
     }
   } catch (error) {
     console.error('Erro ao enviar e-mail:', error)
+
     return {
       statusCode: 500,
       headers: corsHeaders(origin),
-      body: JSON.stringify({ error: 'Falha ao enviar o e-mail. Tente novamente mais tarde.' }),
+      body: JSON.stringify({
+        error: 'Falha ao enviar o e-mail. Tente novamente mais tarde.',
+      }),
     }
   }
 }
