@@ -82,7 +82,7 @@ const handler: Handler = async (event: HandlerEvent) => {
       from: `<${process.env.SMTP_USER}>`,
       replyTo: email,
       to: process.env.CONTACT_EMAIL,
-      subject: '[FitWear] Nova mensagem Landing Page',
+      subject: '[FitWear] Nova mensagem',
       text: [
         `E-mail: ${email}`,
         '',
