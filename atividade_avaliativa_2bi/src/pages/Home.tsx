@@ -40,10 +40,13 @@ export default function Home() {
 
   async function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+
+    const form = event.currentTarget
+
     setFormStatus('loading')
     setFormMessage('')
 
-    const formData = new FormData(event.currentTarget)
+    const formData = new FormData(form)
     const payload = {
       email: String(formData.get('email') ?? ''),
       message: String(formData.get('message') ?? ''),
@@ -64,7 +67,7 @@ export default function Home() {
         throw new Error(data.error ?? 'Não foi possível enviar sua mensagem.')
       }
 
-      event.currentTarget.reset()
+      form.reset()
       setFormStatus('success')
       setFormMessage(data.message ?? 'Mensagem enviada com sucesso.')
     } catch (error) {
